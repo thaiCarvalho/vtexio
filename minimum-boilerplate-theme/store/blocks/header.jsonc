@@ -1,79 +1,95 @@
-{
-  "header": {
-    "blocks": ["header-layout.desktop", "header-layout.mobile"]
+{ 
+  "header": { 
+    "blocks": [ 
+      "header-layout.desktop", 
+      "header-layout.mobile" 
+    ] 
+  }, 
+  "header.full": { 
+    "blocks": [ 
+      "header-layout.desktop", 
+      "header-layout.mobile" 
+    ] 
+  }, 
+ 
+  "header-layout.desktop": { 
+    "children": [ 
+      "header-row#notification", 
+      "header-row#main" 
+    ] 
+  }, 
+ 
+  "header-layout.mobile": { 
+    "children": [ 
+      "header-row#notification", 
+      "header-row#main-mobile", 
+      "header-row#search" 
+    ] 
   },
-  "header.full": {
-    "blocks": ["header-layout.desktop", "header-layout.mobile"]
-  },
-  "header-layout.desktop": {
-    "children": [
-      "sticky-layout#desktop"
+
+  "header-row#notification": {
+    "children": [ 
+      "header-spacer", 
+      "rich-text#header", 
+      "header-spacer" 
     ]
   },
-  "sticky-layout#desktop": {
-    "props": {
-      "blockClass": "sticky-header"
-    },
-    "children": ["flex-layout.row#desktop"]
+
+  "rich-text#header": {
+    "props": { 
+      "text": "**Free Shipping on orders over $50**", 
+      "textPosition": "CENTER" 
+    } 
   },
-  "flex-layout.row#desktop": {
-    "props": {
-      "horizontalAlign": "center",
-      "verticalAlign": "center",
-      "preventHorizontalStretch": true,
-      "preventVerticalStretch": true,
-      "fullWidth": true
-    },
-    "children": [
-      "flex-layout.col#logo-desktop",
-      "flex-layout.col#spacer",
+
+  "header-row#main" : {
+    "children": [ 
+      "logo", 
+      "header-spacer", 
       "search-bar",
-      "locale-switcher",
-      "login",
-      "minicart.v2"
-    ]
-  },
-  "flex-layout.col#spacer": {
-    "props": {
-      "width": "grow"
-    }
-  },
-  "flex-layout.col#logo-desktop": {
-    "props": {
-      "verticalAlign": "middle"
-    },
-    "children": ["logo"]
-  },
-  "logo": {
-    "props": {
-      "title": "Logo",
-      "href": "/",
-      "url": "https://brand.vtex.com/static/media/VTEX_pink_RGB.751a9fb5.svg",
-      "width": "80"
-    }
-  },
-  "header-layout.mobile": {
-    "children": ["sticky-layout#mobile"]
-  },
-  "sticky-layout#mobile": {
-    "children": ["flex-layout.row#mobile"]
-  },
-  "flex-layout.row#mobile": {
-    "children": [
-      "drawer",
-      "logo",
-      "flex-layout.col#spacer",
-      "login",
-      "minicart.v2"
+      "minicart",
+      "login"
     ],
     "props": {
-      "blockClass": "main-header-mobile",
-      "preventHorizontalStretch": true,
-      "preserveLayoutOnMobile": true,
-      "fullWidth": true
+      "inverted": true,
+      "sticky": true,
+      "fullWidth": false
     }
   },
-  "drawer": {
-    "children": []
+
+  "header-row#main-mobile": { 
+    "children": [ 
+      "logo", 
+      "header-spacer", 
+      "minicart", 
+      "login" 
+    ], 
+   
+    "props": { 
+      "sticky": true, 
+      "inverted":true 
+    } 
+  }, 
+   
+  "header-row#search": { 
+    "children": [ 
+      "search-bar" 
+    ], 
+    "props": { 
+      "sticky": true 
+    } 
+  },
+
+  "login":{ 
+    "props": { 
+      "showIconProfile": true, 
+      "iconLabel": "Login" 
+    } 
+  }, 
+   
+  "logo":{ 
+    "props": { 
+      "url": "https://agenciabluefootiodev.vteximg.com.br/arquivos/driven-logo.png"
+    } 
   }
-}
+} 
