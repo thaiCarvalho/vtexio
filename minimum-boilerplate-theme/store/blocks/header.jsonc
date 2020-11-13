@@ -45,7 +45,7 @@
   "header-row#main" : {
     "children": [ 
       "logo", 
-      "header-spacer", 
+      "flex-layout.row#category", 
       "search-bar",
       "minicart",
       "login"
@@ -55,6 +55,18 @@
       "sticky": true,
       "fullWidth": false
     }
+  },
+
+  "flex-layout.row#category": {
+    "children": [
+      "flex-layout.col#category-menu"
+    ]
+    
+  },
+  "flex-layout.col#category-menu": {
+    "children" : [
+      "vtex.menu@2.x:menu#category-menu"
+    ]
   },
 
   "header-row#main-mobile": { 
