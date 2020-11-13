@@ -29,6 +29,7 @@
       "product-rating-inline",
       "product-summary-space",
       "product-summary-price",
+      "product-summary-sku-selector",
       "product-identifier.summary",
       "add-to-cart-button"
     ]
